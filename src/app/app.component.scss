@@ -1,0 +1,146 @@
+@import "../styles/colors.scss";
+
+$standard-margin: 0 0 20px;
+
+
+.rating {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__container {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        background-color: $dark-blue;
+        background-image: linear-gradient($dark-blue, #171e28);
+        padding: 32px 24px;
+        border-radius: 24px;
+        width: clamp(250px, 26vw, 500px);
+        animation: fade-in .4s ease;
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+
+    &__picture {
+        border-radius: 50%;
+        margin: $standard-margin;
+
+        &--center {
+            display: grid;
+            place-items: center;
+        }
+
+    }
+
+    &__icon-star {
+        aspect-ratio: 1;
+        padding: 10px;
+        max-width: 40px;
+        border-radius: 50%;
+        position: relative;
+        background-color: $semi-dark-blue;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        margin: 0 0 8px;
+        font-weight: 600;
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+
+    &__paragraph {
+        font-size: .85rem;
+        color: $medium-grey;
+        line-height: 1.35rem;
+        text-wrap: pretty;
+        margin: $standard-margin;
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: $standard-margin;
+    }
+
+    &__button {
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+        background-color: $semi-dark-blue;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        padding: 18px;
+        color: $medium-grey;
+        font-weight: 600;
+        font-size: .9rem;
+        transition: background-color .2s ease, color .2s ease;
+
+        &:hover:not(&--selected) {
+            background-color: $orange;
+            color: $white;
+        }
+
+        &--selected {
+            color: $white;
+            background-color: $light-grey;
+        }
+    }
+
+    &__submit-button {
+        background-color: $orange;
+        padding: 12px 0;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        text-transform: uppercase;
+        border-radius: 24px;
+        font-size: .8rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+
+        transition: background-color .2s ease, color .2s ease;
+
+        &:hover {
+            background-color: $white;
+            color: $orange;
+        }
+    }
+
+
+    &__thank-you-icon {
+        max-width: 128px;
+    }
+
+    &__pill-container {
+        display: grid;
+        place-items: center;
+    }
+
+    &__pill {
+        background-color: $semi-dark-blue;
+        line-height: 0;
+        color: $orange;
+        padding: 12px 12px;
+        border-radius: 24px;
+        margin: 16px 0 24px;
+        font-size: .8rem;
+    }
+}

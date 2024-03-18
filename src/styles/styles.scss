@@ -1,0 +1,21 @@
+@use "./reset.scss";
+
+
+@import "./colors.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection{
+    color: $white;
+    background-color: $orange;
+}
+
+body{
+    font-family: "Overpass", sans-serif;
+    background-color: $very-dark-blue;
+    color: $white;
+}
